@@ -62,6 +62,9 @@ var loader = new Loader(document.getElementsByTagName('head')[0]);
 		'parsify/app/transformers/healing.js',
 		'parsify/app/transformers/kills_deaths.js',
 
+		// Data Generators
+		'parsify/app/generators/percentages.js',
+
 		// Controllers
 		'parsify/app/controllers/ParserController.js',
 	];
