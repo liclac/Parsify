@@ -21,4 +21,4 @@ app.run(['act', function(act) {
 		var pct = data.OverHealPct;
 		return parseFloat(pct.substring(0, pct.length - 1)) / 100;
 	});
-});
+}]);
