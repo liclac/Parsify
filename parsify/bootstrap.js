@@ -14,6 +14,7 @@ var Parsify = {
 		
 		// Parsify core
 		'parsify/app/app.js',
+		'parsify/app/classes/ACT.js',
 
 		// Services
 		'parsify/app/services/act.js',
