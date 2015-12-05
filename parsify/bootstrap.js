@@ -57,6 +57,7 @@ var loader = new Loader(document.getElementsByTagName('head')[0]);
 		'parsify/app/transformers/test.js',
 		'parsify/app/transformers/times.js',
 		'parsify/app/transformers/encounters.js',
+		'parsify/app/transformers/combatants.js',
 		'parsify/app/transformers/damage.js',
 		'parsify/app/transformers/healing.js',
 		'parsify/app/transformers/kills_deaths.js',
