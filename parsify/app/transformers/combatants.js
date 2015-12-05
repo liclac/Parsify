@@ -1,4 +1,8 @@
 app.run(['act', function(act) {
+	act.combatantTransformer('name', function(data) {
+		return data.name;
+	});
+
 	act.combatantTransformer('job', function(data) {
 		return data.Job;
 	});
