@@ -57,7 +57,7 @@
     <!-- If we have data, display it -->
     <div ng-if="encounter">
         <div id="encounter">
-            {{ encounter.title }} / Time: {{ encounter.duration|time }} / DPS: {{ encounter.encdps }}
+            {{ encounter.title }} / Time: {{ encounter.duration|time }} / DPS: {{ encounter.encdps|num }}
         </div>
 
         <table id="combatantTable">
@@ -77,12 +77,12 @@
                     <td align="center">{{ i + 1 }}</td>
                     <td align="left">{{ char.name }}</td>
                     <td align="center">{{ char.job }}</td>
-                    <td align="right">{{ char.encdps }}</td>
-                    <td align="right">{{ char.damage.part|percent:0 }}%</td>
-                    <td align="right">{{ char.enchps }}</td>
-                    <td align="right">{{ char.healing.part|percent:0 }}%</td>
-                    <td align="right">{{ char.hits.hit_rate|percent }}%</td>
-                    <td align="right">{{ char.hits.crit_rate|percent:0 }}%</td>
+                    <td align="right">{{ char.encdps|num }}</td>
+                    <td align="right">{{ char.damage.part|pct:0 }}%</td>
+                    <td align="right">{{ char.enchps|num }}</td>
+                    <td align="right">{{ char.healing.part|pct:0 }}%</td>
+                    <td align="right">{{ char.hits.hit_rate|pct }}%</td>
+                    <td align="right">{{ char.hits.crit_rate|pct:0 }}%</td>
                 </tr>
             </tbody>
         </table>

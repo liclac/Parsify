@@ -55,7 +55,9 @@ var loader = new Loader(document.getElementsByTagName('head')[0]);
 		'parsify/app/services/act.js',
 
 		// Filters
-		'parsify/app/filters/percent.js',
+		'parsify/app/filters/num.js',
+		'parsify/app/filters/pct.js',
+		'parsify/app/filters/round.js',
 		'parsify/app/filters/time.js',
 
 		// Data Transformers
