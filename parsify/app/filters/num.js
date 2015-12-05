@@ -4,7 +4,7 @@ app.filter('num', function() {
 		if (typeof(val) === "string") {
 			val = parseFloat(val);
 		}
-		if (val == NaN) {
+		if (Number.isNaN(val)) {
 			return "---";
 		}
 		return val.toFixed(decimals);
