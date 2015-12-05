@@ -6,4 +6,4 @@ app.run(['act', function(act) {
 	act.transformer('deaths', function(data) {
 		return parseInt(data.deaths);
 	});
-});
+}]);
