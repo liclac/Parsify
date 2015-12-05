@@ -1,11 +1,91 @@
 <!DOCTYPE html>
 <html ng-app="parsify">
 <head>
-	<!-- Initializes Parsify -->
-	<script src="parsify/bootstrap.js"></script>
-	<!-- End Initialization -->
+    <!-- Initializes Parsify -->
+    <script src="parsify/bootstrap.js"></script>
+    <!-- End Initialization -->
+
+    <!-- RainbowMage's default styles (minus normalization rules) -->
+    <style>
+        * {
+            font-family: "Meiryo";
+            font-size: 12px;
+        }
+
+        /*.resizeHandle {
+            background-image: url(handle.png);
+            background-position: bottom right;
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+        }*/
+
+        #combatantTable {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        #combatantTableBody * {
+            color: #E2EBF5;
+            text-shadow: -1px 0 3px #217AA2, 0 1px 3px #217AA2, 1px 0 3px #217AA2, 0 -1px 3px #217AA2;
+            font-weight: 300;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        #encounter,
+        #combatantTableHeader * {
+            color: #DED7BE;
+            text-shadow: -1px 0 2px #795516, 0 1px 2px #795516, 1px 0 2px #795516, 0 -1px 2px #795516;
+            font-weight: 300;
+            white-space: nowrap;
+        }
+
+        #combatantTableHeader tr {
+            border-bottom: 1px solid #DED7BE;
+        }
+    </style>
 </head>
 <body ng-controller="ParserController">
-<p>{{ data }}</p>
+    <!-- If there's no data (ACT was just started), display a message -->
+    <div id="encounter" ng-if="!encounter">
+        No data to show.
+    </div>
+
+    <!-- If we have data, display it -->
+    <div ng-if="encounter">
+        <div id="encounter">
+            {{ encounter.title }} / Time: {{ encounter.duration }} / DPS: {{ encounter.encdps }}
+        </div>
+
+        <table id="combatantTable">
+            <thead id="combatantTableHeader">
+                <tr>
+                    <td width="5%" align="center">#</td>
+                    <td width="25%" align="left">Name</td>
+                    <td width="8%" align="center">Job</td>
+                    <td width="18%" align="center" colspan="2">DPS (%)</td>
+                    <td width="18%" align="center" colspan="2">HPS (%)</td>
+                    <td width="13%" align="right">Acc. (%)</td>
+                    <td width="13%" align="right">Crt. (%)</td>
+                </tr>
+            </thead>
+            <tbody id="combatantTableBody">
+                <tr ng-repeat="(i, char) in combatants">
+                    <td align="center">{{ i + 1 }}</td>
+                    <td align="left">{{ char.name }}</td>
+                    <td align="center">{{ char.job }}</td>
+                    <td align="right">{{ char.encdps }}</td>
+                    <td align="right">{{ char.damage.part|percent:0 }}%</td>
+                    <td align="right">{{ char.enchps }}</td>
+                    <td align="right">{{ char.healing.part|percent:0 }}%</td>
+                    <td align="right">{{ char.hits.hit_rate|percent }}%</td>
+                    <td align="right">{{ char.hits.crit_rate|percent:0 }}%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
