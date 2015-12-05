@@ -63,7 +63,7 @@
         <table id="combatantTable">
             <thead id="combatantTableHeader">
                 <tr>
-                    <td width="5%" align="center">#</td>
+                    <!--<td width="5%" align="center">#</td>-->
                     <td width="25%" align="left">Name</td>
                     <td width="8%" align="center">Job</td>
                     <td width="18%" align="center" colspan="2">DPS (%)</td>
@@ -74,7 +74,7 @@
             </thead>
             <tbody id="combatantTableBody">
                 <tr ng-repeat="(i, char) in combatants">
-                    <td align="center">{{ i + 1 }}</td>
+                    <!--<td align="center">{{ i + 1 }}</td>-->
                     <td align="left">{{ char.name }}</td>
                     <td align="center">{{ char.job }}</td>
                     <td align="right">{{ char.encdps|num }}</td>
