@@ -78,11 +78,11 @@
                     <td align="left">{{ char.name }}</td>
                     <td align="center">{{ char.job }}</td>
                     <td align="right">{{ char.encdps|num }}</td>
-                    <td align="right">{{ char.damage.part|pct:0 }}%</td>
+                    <td align="right">{{ char.damage.part|pct|num:0 }}%</td>
                     <td align="right">{{ char.enchps|num }}</td>
-                    <td align="right">{{ char.healing.part|pct:0 }}%</td>
-                    <td align="right">{{ char.hits.hit_rate|pct }}%</td>
-                    <td align="right">{{ char.hits.crit_rate|pct:0 }}%</td>
+                    <td align="right">{{ char.healing.part|pct|num:0 }}%</td>
+                    <td align="right">{{ char.hits.hit_rate|pct|num }}%</td>
+                    <td align="right">{{ char.hits.crit_rate|pct|num:0 }}%</td>
                 </tr>
             </tbody>
         </table>
