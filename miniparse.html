@@ -57,7 +57,7 @@
     <!-- If we have data, display it -->
     <div ng-if="encounter">
         <div id="encounter">
-            {{ encounter.title }} / Time: {{ encounter.duration }} / DPS: {{ encounter.encdps }}
+            {{ encounter.title }} / Time: {{ encounter.duration|time }} / DPS: {{ encounter.encdps }}
         </div>
 
         <table id="combatantTable">

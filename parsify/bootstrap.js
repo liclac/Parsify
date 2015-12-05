@@ -45,6 +45,7 @@ var loader = new Loader(document.getElementsByTagName('head')[0]);
 	var scripts = [
 		// Third-party libraries
 		'parsify/bower_components/angular/angular.js',
+		'parsify/bower_components/moment/moment.js',
 		
 		// Parsify core
 		'parsify/app/app.js',
@@ -55,6 +56,7 @@ var loader = new Loader(document.getElementsByTagName('head')[0]);
 
 		// Filters
 		'parsify/app/filters/percent.js',
+		'parsify/app/filters/time.js',
 
 		// Data Transformers
 		'parsify/app/transformers/test.js',
