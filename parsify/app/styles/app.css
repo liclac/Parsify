@@ -1,5 +1,13 @@
+body, html {
+    margin: 0;
+}
+
 html {
-	background-color: rgba(255,0,0,0.5);
-	font-family: monospace;
-	word-wrap: break-word;
+    height: 100%;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+body {
+    background-color: rgba(255,0,0,0.5);
 }
