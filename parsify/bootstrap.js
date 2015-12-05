@@ -7,8 +7,42 @@
 
 "use strict";
 
-var Parsify = {
-	scripts: [
+function Loader(head) {
+	this.head = head;
+}
+
+/**
+ * Load a script by dynamically inserting it into the page HEAD.
+ * 
+ * @param head The page's <head> element
+ * @param src Path to the JS file to load
+ */
+Loader.prototype.loadScript = function(src) {
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = src;
+	script.async = false;
+	this.head.appendChild(script);
+}
+
+/**
+ * Load a stylesheet by dynamically inserting it into the page HEAD.
+ * 
+ * @param head The page's <head> element
+ * @param href Path to the CSS file to load
+ */
+Loader.prototype.loadStyle = function(href) {
+	var link = document.createElement('link');
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = href;
+	this.head.appendChild(link);
+}
+
+var loader = new Loader(document.getElementsByTagName('head')[0]);
+
+(function() {
+	var scripts = [
 		// Third-party libraries
 		'parsify/bower_components/angular/angular.js',
 		
@@ -29,53 +63,20 @@ var Parsify = {
 
 		// Controllers
 		'parsify/app/controllers/ParserController.js',
-	],
-	styles: [
+	];
+
+	for (var i in scripts) {
+		var script = scripts[i];
+		loader.loadScript(script);
+	}
+
+	var styles = [
 		// Main styles
 		'parsify/app/styles/app.css',
-	],
-};
+	];
 
-(function() {
-	var head = document.getElementsByTagName('head')[0];
-
-	/**
-	 * Load a script by dynamically inserting it into the page HEAD.
-	 * 
-	 * @param head The page's <head> element
-	 * @param src Path to the JS file to load
-	 */
-	var loadScript = function(head, src) {
-		var script = document.createElement('script');
-		script.type = 'text/javascript';
-		script.src = src;
-		script.async = false;
-		head.appendChild(script);
-	}
-
-	/**
-	 * Load a stylesheet by dynamically inserting it into the page HEAD.
-	 * 
-	 * @param head The page's <head> element
-	 * @param href Path to the CSS file to load
-	 */
-	var loadStyle = function(head, href) {
-		var link = document.createElement('link');
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = href;
-		head.appendChild(link);
-	}
-
-	// Load configured scripts
-	for (var i in Parsify.scripts) {
-		var script = Parsify.scripts[i];
-		loadScript(head, script);
-	}
-
-	// Load configured styles
-	for (var i in Parsify.styles) {
-		var style = Parsify.styles[i];
-		loadStyle(head, style);
+	for (var i in styles) {
+		var style = styles[i];
+		loader.loadStyle(style);
 	}
 })();
