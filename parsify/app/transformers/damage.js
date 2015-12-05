@@ -21,8 +21,8 @@ app.run(['act', function(act) {
 			total: parseInt(data.swings),
 			crit: parseInt(data.crithits),
 		};
-		hits.hit_rate = (hits.hit / hits.total) || 0;
-		hits.miss_rate = (hits.miss / hits.total) || 0;
+		hits.hit_rate = (hits.hit / hits.total);
+		hits.miss_rate = (hits.miss / hits.total);
 		hits.crit_rate = (hits.crit / hits.hit) || 0;
 		return hits;
 	});
