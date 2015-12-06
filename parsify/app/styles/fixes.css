@@ -1,0 +1,8 @@
+td > img:first-child:last-child {
+	display: block;
+}
+
+tbody td {
+	line-height: 1.1em;
+	vertical-align: middle;
+}

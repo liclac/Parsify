@@ -83,6 +83,7 @@ var loader = new Loader(document.getElementsByTagName('head')[0]);
 
 	var styles = [
 		// Main styles
+		'parsify/app/styles/fixes.css',
 		'parsify/app/styles/app.css',
 	];
 
