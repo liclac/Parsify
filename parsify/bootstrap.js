@@ -48,6 +48,7 @@ var loader = new Loader(document.getElementsByTagName('head')[0]);
 		'parsify/bower_components/moment/moment.js',
 		
 		// Parsify core
+		'parsify/app/util.js',
 		'parsify/app/app.js',
 		'parsify/app/classes/ACT.js',
 
