@@ -25,18 +25,18 @@ A minimal example
 <!-- Let ParserController provide data -->
 <body ng-controller="ParserController">
     
-    <!-- Encounter data is available in 'encounter' -->
+    <!-- Header -->
     <div>
         <!-- Use {{ brackets }} to print out a value -->
         {{ encounter.title }}
     </div>
     
-    <!-- Combatant data is available in 'combatants' -->
-    <!-- Tags: tr = table row, td = table data (cell) -->
+    <!-- Table of combatants -->
     <table>
         
         <!-- Table header -->
         <thead>
+            <!-- tr = Table Row, td = Table Data (a cell) -->
             <tr>
                 <td width="45%">Name</td>
                 <td width="5%">Job</td>
