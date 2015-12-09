@@ -39,6 +39,17 @@ Loader.prototype.loadStyle = function(href) {
 	this.head.appendChild(link);
 }
 
+/**
+ * Load a bundled plugin.
+ * 
+ * @param id ID of the plugin to load
+ */
+Loader.prototype.loadPlugin = function(id) {
+	var pluginPath = 'plugins/' + id;
+	this.loadStyle(pluginPath + '/style.css');
+	this.loadScript(pluginPath + '/script.js');
+}
+
 var loader = new Loader(document.getElementsByTagName('head')[0]);
 
 (function() {
