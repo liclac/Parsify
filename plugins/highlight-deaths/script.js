@@ -7,7 +7,7 @@ app.directive('highlightDeaths', function() {
 				if (val > 0) {
 					e.addClass(className);
 				} else {
-					e.addClass(className);
+					e.removeClass(className);
 				}
 			});
 		}
