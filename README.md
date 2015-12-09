@@ -62,7 +62,7 @@ Sample miniparse.html
                 <td>{{ char.maxhit.name || "---" }} ({{ char.maxhit.damage|num:0 }})</td>
                 
                 <!-- Or you can hide the text if this character hasn't attacked yet: -->
-                <!-- <td><span ng-if="char.maxhit.name">{{ char.maxhit.name }} ({{ char.maxhit.damage|num:0 }})</span></td> -->
+                <!-- <td><span ng-if="char.maxhit.name">{{ char.maxhit.name }} [...]</span></td> -->
                 
             </tr>
         </tbody>
