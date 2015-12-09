@@ -9,6 +9,7 @@ It replaces the monolithic `miniparse.html` file shipped with it, and provides:
 * **Reusable components** - Parts of overlays can be shared as plugins and applied to someone else's. No more need to replace whole miniparse.html files to try a different style. Keep your layout and style it how you like.
 
 RainbowMage's Overlay Plugin is really cool, but seriously, the UI customization is rather painful.
+
 This is an attempt to remedy this, by providing data bindings, normalization and encapsulation to the whole thing.
 
 Sample miniparse.html
