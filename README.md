@@ -59,7 +59,10 @@ Sample miniparse.html
                 <td>{{ char.dps|num:2 }}</td>
                 
                 <!-- You can use default values with {{ expression || "Default" }}-->
-                <td>{{ char.maxhit.name || "---" }} ({{ char.maxhit.damage|num:0 }})
+                <td>{{ char.maxhit.name || "---" }} ({{ char.maxhit.damage|num:0 }})</td>
+                
+                <!-- Or you can hide the text if this character hasn't attacked yet: -->
+                <!-- <td><span ng-if="char.maxhit.name">{{ char.maxhit.name }} ({{ char.maxhit.damage|num:0 }})</span></td> -->
                 
             </tr>
         </tbody>
