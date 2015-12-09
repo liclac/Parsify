@@ -1,16 +1,15 @@
 Parsify
 =======
 
-Parsify is a framework for customizable parser overlays, running on top of [RainbowMage's ACT Overlay Plugin](https://github.com/RainbowMage/OverlayPlugin).
-
-It replaces the monolithic miniparse.html file shipped with it, and provides:
+Parsify is a framework for customizable parser overlays, running on top of [RainbowMage's ACT Overlay Plugin](https://github.com/RainbowMage/OverlayPlugin).  
+It replaces the monolithic `miniparse.html` file shipped with it, and provides:
 
 * **Better, easier customization** - it uses [AngularJS](https://angularjs.org) to build parser UIs out of HTML and directives, rather than generating HTML from messy JS definitions and functions.
 * **More accurate, more consistent** - more precise percentages, arbitrary precision, max hits with names and damage separated... and no more inconsistencies (`ParryPct` vs `crithit%`).
 * **Reusable components** - Parts of overlays can be shared as plugins and applied to someone else's. No more need to replace whole miniparse.html files to try a different style. Keep your layout and style it how you like.
 
-A minimal example
------------------
+Sample miniparse.html
+---------------------
 
 ```html
 <!DOCTYPE html>
