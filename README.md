@@ -30,8 +30,9 @@ A minimal example
         {{ encounter.title }} / Time: {{ encounter.duration|time }} / DPS: {{ encounter.encdps|num:0 }}
     </div>
     
-    <!-- Combatant data in a table; <tr> = table row, <td> = table data (cell) -->
-    <table id="combatantTable">
+    <!-- Combatant data is available in 'combatants' -->
+    <!-- Tags: tr = table row, td = table data (cell) -->
+    <table>
         
         <!-- Table header -->
         <thead>
