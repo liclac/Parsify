@@ -14,13 +14,15 @@ A minimal example
 
 ```html
 <!DOCTYPE html>
+<!-- ng-app="parsify" is needed for Parsify to function -->
 <html ng-app="parsify">
 <head>
 	<!-- This does ALL the necessary setup for Parsify -->
     <script src="parsify/bootstrap.js"></script>
 </head>
-<!-- ng-controller lets a "controller" provide data - ParserController in this case -->
+<!-- Let ParserController provide data -->
 <body ng-controller="ParserController">
+    
     <!-- Encounter data is available in 'encounter' -->
     <div id="encounter">
         {{ encounter.title }} / Time: {{ encounter.duration|time }} / DPS: {{ encounter.encdps|num:0 }}
@@ -28,12 +30,13 @@ A minimal example
     
     <!-- Combatant data in a table; <tr> = table row, <td> = table data (cell) -->
     <table id="combatantTable">
+        
         <!-- Table header -->
         <thead>
             <tr>
-                <td>Name</td>
-                <td>Job</td>
-                <td>DPS</td>
+                <td width="45%">Name</td>
+                <td width="5%">Job</td>
+                <td width="20%" align="right">DPS</td>
                 <td>Max Hit</td>
             </tr>
         </thead>
@@ -42,6 +45,7 @@ A minimal example
         <tbody>
             <!-- Add a row for every combatant, accessing data as 'char' -->
             <tr ng-repeat="char in combatants">
+                
                 <!-- Use {{ brackets }} to print variables -->
                 <td>{{ char.name }}</td>
                 
@@ -54,9 +58,12 @@ A minimal example
                 
                 <!-- You can use default values with {{ expression || "Default" }}-->
                 <td>{{ char.maxhit.name || "---" }} ({{ char.maxhit.damage|num:0 }})
+                
             </tr>
         </tbody>
+        
     </table>
+    
 </body>
 </html>
 ```
