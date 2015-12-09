@@ -55,7 +55,7 @@
     </div>
 
     <!-- If we have data, display it -->
-    <div ng-if="encounter">
+    <div ng-if="encounter" ng-cloak>
         <div id="encounter">
             {{ encounter.title }} / Time: {{ encounter.duration|time }} / DPS: {{ encounter.encdps|num:0 }}
         </div>
