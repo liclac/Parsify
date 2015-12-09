@@ -26,8 +26,9 @@ A minimal example
 <body ng-controller="ParserController">
     
     <!-- Encounter data is available in 'encounter' -->
-    <div id="encounter">
-        {{ encounter.title }} / Time: {{ encounter.duration|time }} / DPS: {{ encounter.encdps|num:0 }}
+    <div>
+        <!-- Use {{ brackets }} to print out a value -->
+        {{ encounter.title }}
     </div>
     
     <!-- Combatant data is available in 'combatants' -->
@@ -56,7 +57,6 @@ A minimal example
                 <td>{{ char.job|uppercase }}</td>
                 
                 <!-- The 'num' filter prints a number with a set precision (here: 2 decimals) -->
-                <!-- It also has some other niceties, like printing "---" for missing values -->
                 <td>{{ char.dps|num:2 }}</td>
                 
                 <!-- You can use default values with {{ expression || "Default" }}-->
