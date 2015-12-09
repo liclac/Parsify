@@ -14,11 +14,13 @@ A minimal example
 
 ```html
 <!DOCTYPE html>
-<!-- ng-app="parsify" is needed for Parsify to function -->
+<!-- The ng-app directive is necessary -->
 <html ng-app="parsify">
 <head>
+
 	<!-- This does ALL the necessary setup for Parsify -->
     <script src="parsify/bootstrap.js"></script>
+    
 </head>
 <!-- Let ParserController provide data -->
 <body ng-controller="ParserController">
