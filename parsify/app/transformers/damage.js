@@ -32,7 +32,7 @@ app.run(['act', function(act) {
 		return {
 			by: parts[parts.length - 3] || combatant,
 			name: parts[parts.length - 2],
-			damage: parseInt(parts[parts.length - 1]) || 0,
+			damage: parseInt(parts[parts.length - 1].replace(',', '')) || 0,
 		};
 	});
 }]);
